@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Cadastro de materiais</title>
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="js/produto.js"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" >Criador de orçamentos</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            </form>
+            <!-- Navbar-->
+            <a class="ms-auto ms-md-0 me-3 me-lg-4" href="https://pt-br.facebook.com/" role="button" aria-expanded="false"><i style="size: 20px;" class="fa-brands fa-facebook-f"></i></a>
+
+            <a class="ms-auto ms-md-0 me-3 me-lg-4" href="https://www.instagram.com/" role="button" aria-expanded="false"><i class="fa-brands fa-instagram"></i></a>
+
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Menu</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fa-regular fa-note-sticky"></i></div>
+                                Página inicial
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-paint-roller"></i></div>
+                                Materiais
+                            </a>
+                            <a class="nav-link" href="empresa.html">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-building"></i></i></div>
+                                Empresas
+                            </a>
+                            <a class="nav-link">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-sheet-plastic"></i></div>
+                                Orçamentos
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logado como:</div>
+                        usuário
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Cadastro de materiais</h1>
+
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                Novo produto
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-row">
+                                      <div class="col-md-4 mb-3">
+                                        <label for="validationDefault01">Nome</label>
+                                        <input type="text" class="form-control" id="produto" placeholder="Produto" required>
+                                      </div>
+                                      <div class="col-md-4 mb-3">
+                                        <label for="validationDefault02">Valor</label>
+                                        <input type="text" class="form-control" id="valor" placeholder="Valor" required>
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                      <div class="col-md-4 mb-3">
+                                        <label for="validationDefault03">Marca</label>
+                                        <input type="text" class="form-control" id="marca" placeholder="Marca (opcional)" required>
+                                      </div>
+                                      <div class="col-md-3 mb-3">
+                                        <label for="validationDefault04">Loja</label>
+                                        <input type="text" class="form-control" id="Loja" placeholder="Loja (opcional)" required>
+                                      </div>
+                                      <div class="col-md-3 mb-3">
+                                        <label for="w3review">Descrição</label>
+                                        <div class="md-form">
+                                            <textarea id="descricao" class="md-textarea form-control" placeholder="Descrição (opcional)" rows="3" required></textarea>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                  </form>
+                                  <button onclick="openModal()" class="btn btn-success" id="new">Cadastrar</button>
+                                  <button class="btn btn-danger" type="reset">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Lista de materiais</h1>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Tabela
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Produto</th>
+                                            <th>Valor</th>
+                                            <th>Marca</th>
+                                            <th>Loja</th>
+                                            <th>Descrição</th>
+                                            <th>Opções</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Produto</th>
+                                            <th>Valor</th>
+                                            <th>Marca</th>
+                                            <th>Loja</th>
+                                            <th>Descrição</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody id="tbody">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-container">
+                        <div class="modal">
+                          <form>
+                            <label for="m-nome">Nome</label>
+                            <input id="m-nome" type="text" required />
+                    
+                            <label for="m-funcao">Função</label>
+                            <input id="m-funcao" type="text" required />
+                    
+                            <label for="m-salario">Salário</label>
+                            <input id="m-salario" type="number" required />
+                            <button id="btnSalvar">Salvar</button>
+                          </form>
+                        </div>
+                      </div>
+                  
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted"> &copy;Criado por gefson e paulo</div>
+                            <div>
+                                &middot;
+                                <a href="https://miro.medium.com/max/300/1*sXntGz_sVG3164fdY03-qQ.jpeg">Quem somos?</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/produto.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>
