@@ -11,7 +11,6 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <script src="js/produto.js"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -71,103 +70,49 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Cadastro de materiais</h1>
-
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fa-solid fa-circle-plus"></i>
-                                Novo produto
-                            </div>
-                            <div class="card-body">
-                                <form>
-                                    <div class="form-row">
-                                      <div class="col-md-4 mb-3">
-                                        <label for="validationDefault01">Nome</label>
-                                        <input type="text" class="form-control" id="produto" placeholder="Produto" required>
-                                      </div>
-                                      <div class="col-md-4 mb-3">
-                                        <label for="validationDefault02">Valor</label>
-                                        <input type="text" class="form-control" id="valor" placeholder="Valor" required>
-                                      </div>
-                                    </div>
-                                    <div class="form-row">
-                                      <div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Marca</label>
-                                        <input type="text" class="form-control" id="marca" placeholder="Marca (opcional)" required>
-                                      </div>
-                                      <div class="col-md-3 mb-3">
-                                        <label for="validationDefault04">Loja</label>
-                                        <input type="text" class="form-control" id="Loja" placeholder="Loja (opcional)" required>
-                                      </div>
-                                      <div class="col-md-3 mb-3">
-                                        <label for="w3review">Descrição</label>
-                                        <div class="md-form">
-                                            <textarea id="descricao" class="md-textarea form-control" placeholder="Descrição (opcional)" rows="3" required></textarea>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                    </div>
-                                  </form>
-                                  <button onclick="openModal()" class="btn btn-success" id="new">Cadastrar</button>
-                                  <button class="btn btn-danger" type="reset">Cancelar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Lista de materiais</h1>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Tabela
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Produto</th>
-                                            <th>Valor</th>
-                                            <th>Marca</th>
-                                            <th>Loja</th>
-                                            <th>Descrição</th>
-                                            <th>Opções</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Produto</th>
-                                            <th>Valor</th>
-                                            <th>Marca</th>
-                                            <th>Loja</th>
-                                            <th>Descrição</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody id="tbody">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-container">
-                        <div class="modal">
-                          <form>
-                            <label for="m-nome">Nome</label>
-                            <input id="m-nome" type="text" required />
-                    
-                            <label for="m-funcao">Função</label>
-                            <input id="m-funcao" type="text" required />
-                    
-                            <label for="m-salario">Salário</label>
-                            <input id="m-salario" type="number" required />
-                            <button id="btnSalvar">Salvar</button>
-                          </form>
-                        </div>
-                      </div>
                   
+                      <div class="container">
+    <div class="header">
+      <span>Cadastro de Funcionários</span>
+      <button onclick="openModal()" id="new">Incluir</i></button>
+    </div>
+
+    <div class="divTable">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Salário</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+          <label for="m-nome">Nome</label>
+          <input id="m-nome" type="text" required />
+  
+          <label for="m-funcao">Função</label>
+          <input id="m-funcao" type="text" required />
+  
+          <label for="m-salario">Salário</label>
+          <input id="m-salario" type="number" required />
+          <button id="btnSalvar">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+                    
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
@@ -182,9 +127,9 @@
                 </footer>
             </div>
         </div>
+        <script src="js/script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
-        <script src="js/produto.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
