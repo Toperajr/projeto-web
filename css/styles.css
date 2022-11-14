@@ -2270,15 +2270,7 @@ progress {
   border-radius: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-@media (prefers-reduced-motion: reduce) {
-  .form-control::-webkit-file-upload-button, .dataTable-input::-webkit-file-upload-button {
-    -webkit-transition: none;
-    transition: none;
-  }
-  .form-control::file-selector-button, .dataTable-input::file-selector-button {
-    transition: none;
-  }
-}
+
 .form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .dataTable-input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
   background-color: #dde0e3;
 }
@@ -2300,15 +2292,6 @@ progress {
   border-radius: 0;
   -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .form-control::-webkit-file-upload-button, .dataTable-input::-webkit-file-upload-button {
-    -webkit-transition: none;
-    transition: none;
-  }
-}
-.form-control:hover:not(:disabled):not([readonly])::-webkit-file-upload-button, .dataTable-input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button {
-  background-color: #dde0e3;
 }
 
 .form-control-plaintext {
@@ -11536,158 +11519,27 @@ body {
 /* TABLE */
 .dataTable-table {
   border-collapse: collapse;
+  border-color:rgba(0, 0, 0, 0.1);
+  table-layout: fixed;
 }
 
-.dataTable-table > tbody > tr > td,
-.dataTable-table > tbody > tr > th,
-.dataTable-table > tfoot > tr > td,
-.dataTable-table > tfoot > tr > th,
-.dataTable-table > thead > tr > td,
-.dataTable-table > thead > tr > th {
-  vertical-align: top;
-  padding: 0.5rem 0.5rem;
-}
 
 .dataTable-table > thead > tr > th {
   vertical-align: bottom;
-  text-align: left;
+  text-align: center;
   border-bottom: none;
 }
 
-.dataTable-table > tfoot > tr > th {
+.dataTable-table td {
   vertical-align: bottom;
-  text-align: left;
-}
-
-.dataTable-table th {
-  vertical-align: bottom;
-  text-align: left;
-}
-
-.dataTable-table th a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.dataTable-sorter {
-  display: inline-block;
-  height: 100%;
-  position: relative;
-  width: 100%;
-  padding-right: 1rem;
-}
-
-.dataTable-sorter::before,
-.dataTable-sorter::after {
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  right: 4px;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  opacity: 0.2;
-}
-
-.dataTable-sorter::before {
-  bottom: 4px;
-}
-
-.dataTable-sorter::after {
-  top: 0px;
-}
-
-.asc .dataTable-sorter::after,
-.desc .dataTable-sorter::before {
-  opacity: 0.6;
-}
-
-.dataTables-empty {
-  text-align: center;
-}
-
-.dataTable-top::after,
-.dataTable-bottom::after {
-  clear: both;
-  content: " ";
-  display: table;
-}
-
-.btn-datatable {
-  height: 20px !important;
-  width: 20px !important;
-  font-size: 0.75rem;
-  border-radius: 0.25rem !important;
-}
-
-/*teste */
-
-.modal-container {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 999;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
+  text-align: center ;
+  
+  border: solid 0.5px;
   background-color: white;
-  border-radius: 10px;
-  width: 50%;
-}
+  border-color:rgba(0, 0, 0, 0.1);
 
-.modal label {
-  font-size: 14px;
-  width: 100%;
 }
-
-.modal input {
-  width: 100%;
-  outline: none;
-  padding: 5px 10px; 
-  width: 100%;
-  margin-bottom: 20px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-}
-
-.modal button {
-  width: 100%;
-  margin: 10px auto;
-  outline: none;
-  border-radius: 20px; 
-  padding: 5px 10px; 
-  width: 100%;
-  border: none;
-  background-color: rgb(57, 57, 226);
-  color: white;
-}
-
-.active {
-  display: flex;
-}
-
-.active .modal {
-  animation: modal .4s;
-}
-
-@keyframes modal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -60px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+#centro{
+  vertical-align: middle;
+  text-align: center;
 }
