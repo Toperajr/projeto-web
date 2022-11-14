@@ -1,10 +1,10 @@
 $(function(){
-    var operacao = "A"; //"A"=Adição; "E"=Edição
+    var operacao = "A"; //"A"=adicionar; "E"=editar
     var indice_selecionado = -1; //Índice do item selecionado na lista
     var tbClientes = localStorage.getItem("tbClientes");// Recupera os dados armazenados
     tbClientes = JSON.parse(tbClientes); // Converte string para objeto
 
-		if(tbClientes == null){ // Caso não haja conteúdo, iniciamos um vetor vazio
+		if(tbClientes == null){ // Caso não haja conteúdo, inicia-se um vetor vazio para o storage local
 	    tbClientes = [];
 		}
 
@@ -18,6 +18,7 @@ $(function(){
 
 		Listar(tbClientes);
 
+        //função para editar
 		$("#tblListar").on("click", "#btnEditar", function(){
 	    operacao = "E";
 	    indice_selecionado = parseInt($(this).attr("value"));
@@ -30,6 +31,7 @@ $(function(){
 		$("#txtNome").focus();
 		});
 
+        //função para excluir
 		$("#tblListar").on("click", "#btnExcluir",function(){
 	    indice_selecionado = parseInt($(this).attr("alt"));
 			Excluir(tbClientes, indice_selecionado);

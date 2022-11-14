@@ -42,7 +42,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Menu</div>
-                            <a class="nav-link" href="Jecoricóteteu.html">
+                            <a class="nav-link" href="home.html">
                                 <div class="sb-nav-link-icon"><i class="fa-regular fa-note-sticky"></i></div>
                                 Página inicial
                             </a>
@@ -77,93 +77,68 @@
                                 Novo produto
                             </div>
                             <div class="card-body">
-                                <form>
-                                    <div class="form-row">
-                                      <div class="col-md-4 mb-3">
-                                        <label for="validationDefault01">Nome</label>
-                                        <input type="text" class="form-control" id="produto" placeholder="Produto" required>
-                                      </div>
-                                      <div class="col-md-4 mb-3">
-                                        <label for="validationDefault02">Valor</label>
-                                        <input type="text" class="form-control" id="valor" placeholder="Valor" required>
-                                      </div>
-                                    </div>
-                                    <div class="form-row">
-                                      <div class="col-md-4 mb-3">
-                                        <label for="validationDefault03">Marca</label>
-                                        <input type="text" class="form-control" id="marca" placeholder="Marca (opcional)" required>
-                                      </div>
-                                      <div class="col-md-3 mb-3">
-                                        <label for="validationDefault04">Loja</label>
-                                        <input type="text" class="form-control" id="Loja" placeholder="Loja (opcional)" required>
-                                      </div>
-                                      <div class="col-md-3 mb-3">
-                                        <label for="w3review">Descrição</label>
-                                        <div class="md-form">
-                                            <textarea id="descricao" class="md-textarea form-control" placeholder="Descrição (opcional)" rows="3" required></textarea>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <button class="btn btn-success" value="Salvar" type="submit" id="btnSalvar">
-                                    <button class="btn btn-danger" value="Limpar" type="reset">
-                                  </form>
+                                <form id="frmCadastro">
+
+                                            <div class="col-md-1 mb-4">
+                                                <label for="txtCodigo">ID</label>
+                                                    <input class="form-control" type="text" id="txtCodigo" required />
+                                            </div>
+
+                                            <div class="col-md-4 mb-4">
+                                                <label for="txtNome"></label>
+                                                    <span>Produto</span>
+                                                    <input class="form-control" type="text" id="txtNome" required/>
+                                            </div>
+
+                                            <div class="col-md-4 mb-4">
+                                                <label for="txtTelefone"></label>
+                                                    <span>Valor</span>
+                                                     <input class="form-control" type="number" id="txtValor" required/>
+                                            </div>
+
+                                            <div class="col-md-4 mb-4">
+
+                                                <label for="txtEmail"></label>
+                                                    <span>Marca</span>
+                                                    <input class="form-control" type="text" id="txtEmail" required/>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <button class="btn btn-success" type="submit" value="Salvar" id="btnSalvar">Salvar</button>
+                                                <input class="btn btn-danger" value="Limpar" type="reset"/>
+                                            </div>
+                            </form>
 
                             </div>
                         </div>
                     </div>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Lista de materiais</h1>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Tabela
+                                Lista de materiais
+                                
                             </div>
+                            
+                            
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                
+                                <div class="outer-wrapper">
+                                <div class="table-wrapper">
+                                <table class="dataTable-table" id="tblListar">
                                     <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Produto</th>
-                                            <th>Valor</th>
-                                            <th>Marca</th>
-                                            <th>Loja</th>
-                                            <th>Descrição</th>
-                                            <th>Opções</th>
-                                        </tr>
+                                      <tr>
+                                      </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Produto</th>
-                                            <th>Valor</th>
-                                            <th>Marca</th>
-                                            <th>Loja</th>
-                                            <th>Descrição</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody id="tbody">
+                                    <tbody>
 
                                     </tbody>
-                                </table>
+                                  </table>
+                                </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="modal-container">
-                        <div class="modal">
-                          <form>
-                            <label for="m-nome">Nome</label>
-                            <input id="m-nome" type="text" required />
-                    
-                            <label for="m-funcao">Função</label>
-                            <input id="m-funcao" type="text" required />
-                    
-                            <label for="m-salario">Salário</label>
-                            <input id="m-salario" type="number" required />
-                            <button id="btnSalvar">Salvar</button>
-                          </form>
-                        </div>
-                      </div>
-                  
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">

@@ -40,7 +40,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Menu</div>
-                            <a class="nav-link" href="Jecoricóteteu.html">
+                            <a class="nav-link" href="home.html">
                                 <div class="sb-nav-link-icon"><i class="fa-regular fa-note-sticky"></i></div>
                                 Página inicial
                             </a>
@@ -66,49 +66,78 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                  
-                      <div class="container">
-    <div class="header">
-      <span>Cadastro de Funcionários</span>
-      <button onclick="openModal()" id="new">Incluir</i></button>
-    </div>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Cadastro de materiais</h1>
 
-    <div class="divTable">
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Função</th>
-            <th>Salário</th>
-            <th class="acao">Editar</th>
-            <th class="acao">Excluir</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                Novo produto
+                            </div>
+                            <div class="card-body">
+                                <form id="frmCadastro">
 
-    <div class="modal-container">
-      <div class="modal">
-        <form>
-          <label for="m-nome">Nome</label>
-          <input id="m-nome" type="text" required />
-  
-          <label for="m-funcao">Função</label>
-          <input id="m-funcao" type="text" required />
-  
-          <label for="m-salario">Salário</label>
-          <input id="m-salario" type="number" required />
-          <button id="btnSalvar">Salvar</button>
-        </form>
-      </div>
-    </div>
+                                            <div class="col-md-1 mb-4">
+                                                <label for="txtCodigo">ID</label>
+                                                    <input class="form-control" type="text" id="txtCodigo" required />
+                                            </div>
 
-  </div>
+                                            <div class="col-md-4 mb-4">
+                                                <label for="txtNome"></label>
+                                                    <span>Produto</span>
+                                                    <input class="form-control" type="text" id="txtNome" required/>
+                                            </div>
 
+                                            <div class="col-md-4 mb-4">
+                                                <label for="txtTelefone"></label>
+                                                    <span>Valor</span>
+                                                     <input class="form-control" type="number" id="txtValor" required/>
+                                            </div>
 
-                    
+                                            <div class="col-md-4 mb-4">
+
+                                                <label for="txtEmail"></label>
+                                                    <span>Marca</span>
+                                                    <input class="form-control" type="text" id="txtEmail" required/>
+                                            </div>
+                                            <div class="col-md-4 mb-4">
+                                                <button class="btn btn-success" type="submit" value="Salvar" id="btnSalvar">Salvar</button>
+                                                <input class="btn btn-danger" value="Limpar" type="reset"/>
+                                            </div>
+                            </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid px-4">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Lista de materiais
+                                
+                            </div>
+                            
+                            
+                            <div class="card-body">
+                                
+                                <div class="outer-wrapper">
+                                <div class="table-wrapper">
+                                <table class="dataTable-table" id="tblListar">
+                                    <thead>
+                                      <tr>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                  </table>
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
