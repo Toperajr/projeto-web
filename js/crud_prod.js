@@ -95,7 +95,7 @@ function Listar(tbClientes){
         $("#tblListar tbody").append("<td align ='right'>"+cli.Nome+"</td>");
         $("#tblListar tbody").append("<td align ='right'>"+cli.Valor+"</td>");
         $("#tblListar tbody").append("<td align ='right'>"+cli.Email+"</td>");
-        $("#tblListar tbody").append("<td style='max-width: 20px' align ='left'><button class='btn btn-outline-primary  btn-sm' id='btnEditar' value='"+i+"'>Editar</button> &nbsp"+
+        $("#tblListar tbody").append("<td align ='left'><button class='btn btn-outline-primary  btn-sm' id='btnEditar' value='"+i+"'>Editar</button> &nbsp"+
         "<button class='btn btn-outline-danger  btn-sm' id='btnExcluir' value='"+i+"'>Excluir</button></td>");
         $("#tblListar tbody").append("</tr>");
     }
