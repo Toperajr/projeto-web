@@ -11531,7 +11531,7 @@ body {
 }
 
 .dataTable-table td {
-  vertical-align: bottom;
+  vertical-align: middle;
   text-align: center ;
   
   border: solid 0.5px;
