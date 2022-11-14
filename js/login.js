@@ -7,7 +7,7 @@ function logar(){
     //parabéns vc achou a senha :)
     {
         alert('Sucesso');
-        location.href = "Jecoricóteteu.html";
+        location.href = "home.html";
     }else{
         alert('Usuario ou senha incorretos');
     }
