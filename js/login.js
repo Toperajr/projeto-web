@@ -8,6 +8,7 @@ function logar(){
     {
         alert('Sucesso');
         location.href = "home.html";
+        
     }else{
         alert('Usuario ou senha incorretos');
     }
