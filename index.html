@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>PROJETO WEB</title>
-    <link rel="stylesheet" href="css/login.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
-  </head>
-  <body>
-    
 
-      <form action="index.html" class="login-form">
-        <h1 style="font-size: 45px;">Login</h1>
+<head>
+  <meta charset="utf-8">
+  <title>PROJETO WEB</title>
+  <link rel="stylesheet" href="css/login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
 
-        <div class="txtb">
-          <input type="text" id="login">
-          <span data-placeholder="Nome"></span>
-        </div>
+<body>
 
-        <div class="txtb">
-          <input type="password" id="senha">
-          <span data-placeholder="Senha"></span>
-        </div>
 
-        <input type="submit" class="logbtn" value="Logar" onclick="logar(); return false">
+  <form action="index.html" class="login-form">
+    <h1 style="font-size: 45px;">Login</h1>
 
-        <div class="bottom-text">
-          Não possui uma conta? É porque esse sistema só foi feito para uma!
-        </div>
+    <div class="txtb">
+      <input type="email" id="email" required>
+      <span data-placeholder="Email"></span>
+    </div>
 
-      </form>
+    <div class="txtb">
+      <input type="password" id="senha" required>
+      <span data-placeholder="Senha"></span>
+    </div>
 
-      <script type="text/javascript">
-      $(".txtb input").on("focus",function(){
-        $(this).addClass("focus");
-      });
+    <button type="button" class="logbtn" id="bntlogar" onclick="logins()">Entrar</button>
 
-      $(".txtb input").on("blur",function(){
-        if($(this).val() == "")
+    <div class="bottom-text">
+      Não possui uma conta? É porque esse sistema só foi feito para uma!
+    </div>
+
+  </form>
+
+  <script type="text/javascript">
+    $(".txtb input").on("focus", function () {
+      $(this).addClass("focus");
+    });
+
+    $(".txtb input").on("blur", function () {
+      if ($(this).val() == "")
         $(this).removeClass("focus");
-      });
+    });
 
-      </script>
-      
-      <script src="js/login.js"></script>
-  </body>
+  </script>
+  <script src="js/login.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyA2RZGLLxTSIlL8CpT7-Ca4Vd58mZIy8-k",
+      authDomain: "projeto-web-43025.firebaseapp.com",
+      databaseURL: "https://projeto-web-43025-default-rtdb.firebaseio.com",
+      projectId: "projeto-web-43025",
+      storageBucket: "projeto-web-43025.appspot.com",
+      messagingSenderId: "473487233712",
+      appId: "1:473487233712:web:7102ef51072ebdd75d6175"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+
+  </script>
+
+  <script src="js/validations.js"></script>
+</body>
+
 </html>

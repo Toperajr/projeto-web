@@ -53,8 +53,8 @@
                             Materiais
                         </a>
                         <a class="nav-link" href="empresa.html">
-                            <div class="sb-nav-link-icon"><i class="fa-solid fa-building"></i></i></div>
-                            Empresas
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                            Clientes
                         </a>
                         <a class="nav-link" href="orcamentos.html">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-sheet-plastic"></i></div>
@@ -155,6 +155,11 @@
             </footer>
         </div>
     </div>
+    <form class="new-task-form">
+        <input placeholder="Enter Task Name Here.." required class="new-task" type="text" />
+        <button type="submit">Create Task</button>
+    </form>
+    <ol id="todos"></ol>
     
     <script type="module">
         // CONEXÃO COM O FIRESTORE PARA BANCO DE DADOS
@@ -195,12 +200,15 @@
             
         })
 
+        
+
 
     </script>
     <script src="js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="js/crudpro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    
         crossorigin="anonymous"></script>
 </body>
 
