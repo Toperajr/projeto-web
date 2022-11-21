@@ -48,11 +48,11 @@
                             <div class="sb-nav-link-icon"><i class="fa-regular fa-note-sticky"></i></div>
                             Página inicial
                         </a>
-                        <a class="nav-link">
+                        <a class="nav-link" href="produtos.html">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-paint-roller"></i></div>
                             Materiais
                         </a>
-                        <a class="nav-link" href="clientes.html">
+                        <a class="nav-link">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                             Clientes
                         </a>
@@ -64,43 +64,48 @@
                 </div>
                 <div style="background-color: rgb(44, 48, 81)" class="sb-sidenav-footer">
                     <div class="small">Logado como:</div>
-                    admin
+                    Admin
                 </div>
             </nav>
         </div>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Cadastro de materiais</h1>
+                    <h1 class="mt-4">Cadastro de clientes</h1>
 
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fa-solid fa-circle-plus"></i>
-                            Novo produto
+                            Novo Cliente
                         </div>
                         <div class="card-body">
                             <form id="frmCadastro">
 
                                 <div class="col-md-4 mb-4">
                                     <label for="txtNome"></label>
-                                    <span>Produto</span>
-                                    <input class="form-control" type="text" id="txtNome" required placeholder="Material (obrigatório)" />
+                                    <span>Cliente</span>
+                                    <input class="form-control" type="text" id="clienteNome" required placeholder="Nome (obrigatório)" />
                                 </div>
 
                                 <div class="col-md-4 mb-4">
                                     <label for="txtValor"></label>
-                                    <span>Valor</span>
-                                    <input class="form-control" type="number" id="txtValor" required placeholder="Valor (obrigatório)" />
+                                    <span>Contato</span>
+                                    <input class="form-control" type="text" id="contato" required placeholder="Telefone (obrigatório)" />
+                                    
                                 </div>
 
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-5 mb-4">
 
                                     <label for="txtMarca"></label>
-                                    <span>Marca</span>
-                                    <input class="form-control" type="text" id="txtMarca" placeholder="Marca" />
+                                    <span>endereco</span>
+                                    <input class="form-control" type="text" id="endereco" placeholder="Endereço" />
                                 </div>
+                                <div class="form-outline w-50 mb-4">
+                                    <label class="form-label" for="textAreaExample5">Descrição da obra</label>
+                                    <textarea class="form-control" id="descricao" rows="3" placeholder="Descrição..."></textarea>
+                                  </div>
                                 <div class="col-md-4 mb-4">
-                                    <button class="btn btn-success" type="button" id="btnSalvar" onclick="salvarMaterial()">Salvar</button>
+                                    <button class="btn btn-success" type="button" id="btnSalvar1" onclick="salvarcliente()">Salvar</button>
                                     <button class="btn btn-danger" value="Limpar" type="reset">Limpar</button> 
                                 </div>
                             </form>
@@ -112,7 +117,7 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Lista de materiais
+                            Lista de clientes
 
                         </div>
 
@@ -124,13 +129,14 @@
                                     <table class="dataTable-table" id="tblListar">
                                         <thead>
                                             <tr>
-                                            <th>Produto</th>
-                                            <th>Valor</th>
-                                            <th>Marca</th>     
-                                            <th style='max-width: 30px'>Opções</th>                                      
+                                            <th>Nome</th>
+                                            <th>Telefone</th>
+                                            <th>Endereço</th>  
+                                            <th>Descrição</th>   
+                                            <th style='max-width: 40px'>Opções</th>                                      
                                          </tr>
                                         </thead>
-                                        <tbody id="listaprod">
+                                        <tbody id="listacli">
                                             <tr>
                                 
                                             </tr>
@@ -166,8 +172,8 @@
     <script src="js/login/carregamento.js"></script>
     <script src="js/auth-guard.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/produtos/produtos.js"></script>
-    <script src="js/produtos/crudProd.js"></script>
+    <script src="js/clientes/clientes.js"></script>
+    <script src="js/clientes/crudCli.js"></script>
 </body>
 
 </html>
