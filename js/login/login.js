@@ -9,6 +9,7 @@ function logins() {
     firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value).then(response => {
             window.location.href = "home.html";
         }).catch(error => {
+        hideLoading();
         alert(getErrorMessage(error));
         console.log('error', error)
     });
@@ -23,6 +24,7 @@ function getErrorMessage(error) {
     if (error.code == "auth/wrong-password") {
         return "Senha incorreta";
     }
+    
     return error.message;
 }
 function getErrorMessage(error) {
