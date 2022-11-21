@@ -64,7 +64,10 @@ function addProdutosTela(listaprod) {
         const iconeDel = document.createElement('i')
         iconeDel.className = "fa-regular fa-trash-can"
         btnDeletar.appendChild(iconeDel)
-        
+        btnDeletar.addEventListener('click', event => {
+            event.stopPropagation();
+            askRemoveTransaction(transaction);
+        })
 
         const opcao = document.createElement('td');
         opcao.setAttribute("style", "width: 100px;");        
@@ -81,7 +84,26 @@ function addProdutosTela(listaprod) {
 function formatMoney(valor) {
     return `${valor.moeda} ${valor.preco.toFixed(2)}`
 }
-function abrirTela(){        
-     window.location.href = "produtos.html?uid=" + listaprod.uid;
-     console.log(listaprod.uid);
+function pedirRemocaoProd(material) {
+    const shouldRemove = confirm('Deseja remover o produto?');
+    if (shouldRemove) {
+        removerProduto(material);
+    }
+}
+function removerProduto(material) {
+    showLoading();
+
+    firebase.firestore()
+        .collection("materiais")
+        .doc(materiais.uid)
+        .delete()
+        .then(() => {
+            hideLoading();
+            document.getElementById(transaction.uid).remove();
+        })
+        .catch(error => {
+            hideLoading();
+            console.log(error);
+            alert('Erro ao remover produto');
+        })
 }
