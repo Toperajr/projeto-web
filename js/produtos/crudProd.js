@@ -80,7 +80,7 @@ function salvar(material) {
     showLoading();
     firebase.firestore()
         .collection('materiais')
-        .add(transaction)
+        .add(material)
         .then(() => {
             hideLoading();
             window.location.href = "produtos.html";

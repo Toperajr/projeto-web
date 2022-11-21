@@ -39,7 +39,8 @@ function addProdutosTela(listaprod) {
 
     listaprod.forEach(listaprod => {
         const tr = document.createElement('tr');
-
+        
+        tr.id = listaprod.uid;
         const nome = document.createElement('td');
         nome.innerHTML = listaprod.nome;
         tr.appendChild(nome);
@@ -66,7 +67,7 @@ function addProdutosTela(listaprod) {
         btnDeletar.appendChild(iconeDel)
         btnDeletar.addEventListener('click', event => {
             event.stopPropagation();
-            askRemoveTransaction(transaction);
+            pedirRemocaoProd(listaprod);
         })
 
         const opcao = document.createElement('td');
@@ -85,7 +86,7 @@ function formatMoney(valor) {
     return `${valor.moeda} ${valor.preco.toFixed(2)}`
 }
 function pedirRemocaoProd(material) {
-    const shouldRemove = confirm('Deseja remover o produto?');
+    const shouldRemove = confirm('Deseja remover o produto: '+material.nome+'?');
     if (shouldRemove) {
         removerProduto(material);
     }
@@ -95,11 +96,11 @@ function removerProduto(material) {
 
     firebase.firestore()
         .collection("materiais")
-        .doc(materiais.uid)
+        .doc(material.uid)
         .delete()
         .then(() => {
             hideLoading();
-            document.getElementById(transaction.uid).remove();
+            document.getElementById(material.uid).remove();
         })
         .catch(error => {
             hideLoading();
