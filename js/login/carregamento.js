@@ -17,3 +17,6 @@ function hideLoading() {
         loadings[0].remove();
     }
 }
+function alertinha(){
+    alert("Algum erro aconteceu, será que essa opção não foi implementada?  ¯|_(ツ)_/¯");
+}

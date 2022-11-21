@@ -11165,7 +11165,7 @@ body {
 
 
 .dataTable-table th {
-  position: sticky; 
+  position: relative; 
   top: 0px;
   
   background-color:rgba(0, 0, 0, 0.07);
@@ -11187,6 +11187,7 @@ body {
   border-color:rgba(0, 0, 0, 0.1);
 
 }
+
 #centro{
   vertical-align: middle;
   text-align: center;
@@ -11197,11 +11198,25 @@ body {
   overflow-y: scroll;
   overflow-x: scroll;
   height: fit-content;
-  max-height: 66.4vh;
+  max-height: 50.4vh;
   
   margin-top: 22px;
   
   margin: 15px;
+  padding-bottom: 20px;
+  
+}
+.table-wrapper2 {
+
+  overflow-y: scroll;
+  overflow-x: scroll;
+  height: fit-content;
+  max-height: 50.4vh;
+  max-width: fit-content ;
+  margin-top: 22px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+
+  margin: 0px;
   padding-bottom: 20px;
   
 }
@@ -11212,6 +11227,16 @@ body {
   border: 1px solid black;
   border-radius: 4px;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
+  
+}
+.outer-wrapper2 {
+  margin: 10px;
+  margin-left: 0px;
+  margin-right: 20px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
+  max-width: fit-content;
   
 }
 .loading {
