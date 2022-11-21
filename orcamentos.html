@@ -85,8 +85,12 @@
                             <form id="frmCadastro">
 
                                 <div class="col-md-4 mb-4">
-
                                     <label for="txtEmail"></label>
+                                    <span>Obra</span>
+                                    <input class="form-control" type="text" id="txtEmail" required placeholder="Titulo da obra/Serviço" />
+                                </div>
+
+                                <div class="col-md-4 mb-4">
                                     <span>Data</span>
                                     <input class="form-control" type="date" id="txtEmail" required />
                                 </div>
@@ -99,10 +103,16 @@
                                     <input style="max-width: 350px;" type="text" readonly="true"
                                         class="form-control aria-label=" />
                                 </div>
-
-
+                                <br>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="form-label">Mão da obra </label>
+                                        <label style="padding-left: 100px; " class="form-label">Valor: &nbsp</label>
+                                    </div>
+                                    <input style="max-width: 100px; height: 30px;" type="number"
+                                     class="form-control aria-label=" placeholder="R$"/>
+                                </div>
                                 <div class="form-outline w-50 mb-4">
-                                    <label class="form-label" for="textAreaExample5">Mão da obra</label>
                                     <textarea class="form-control" id="descricao" rows="3"
                                         placeholder="Descrição..."></textarea>
                                 </div>
@@ -192,16 +202,41 @@
 
 
                         <div class="card-body">
-
                             <div class="outer-wrapper">
                                 <div class="table-wrapper">
                                     <table class="dataTable-table" id="tblListar">
                                         <thead>
                                             <tr>
+                                                <td>Obra</td>
+                                                <td>Data</td>
+                                                <td>Cliente</td>
+                                                <td style='max-width: 200px'>Opções</td>
 
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <tr>
+                                                <td>Construção de piscina</td>
+                                                <td>23/07/2022</td>
+                                                <td>Jubirildo</td>
+                                                <td style='max-width: 200px'>
+                                                    <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-pencil"></i>
+                                                    <i style="padding-right: 10px; font-size: 20px;" class="fa-regular fa-trash-can"></i>
+                                                    <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-file-export"></i>
+                                                </td>
+                                                    
+                                            </tr>
+                                            <tr>
+                                                <td>Manutenção de encanamento</td>
+                                                <td>06/11/2022</td>
+                                                <td>Alex</td>
+                                                <td style='max-width: 200px'>
+                                                    <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-pencil"></i>
+                                                    <i style="padding-right: 10px; font-size: 20px;" class="fa-regular fa-trash-can"></i>
+                                                    <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-file-export"></i>
+                                                </td>
+                                                    
+                                            </tr>
 
                                         </tbody>
                                     </table>
