@@ -8,6 +8,7 @@ function logout() {
 firebase.auth().onAuthStateChanged(user => {
     if (user){
         adicionarCli(user);
+
     }
 })
 
@@ -17,6 +18,7 @@ function adicionarCli(user) {
     firebase.firestore()
     .collection('clientes')
     .where('user.uid', '==', user.uid)
+    .orderBy('nome', 'desc')
     .get()
     .then(snapshot => {
         hideLoading();
@@ -61,7 +63,7 @@ function addClientesTela(listacli) {
         iconeEdi.className = "fa-solid fa-pencil"
         btnEditar.appendChild(iconeEdi)
         btnEditar.addEventListener("click", function () {
-            window.location.href = "produtos.html?uid=" + listacli.uid;
+            window.location.href = "clientes.html?uid=" + listacli.uid;
         });
         
         const btnDeletar = document.createElement('button');
@@ -111,3 +113,5 @@ function removerCliente(cliente) {
             alert('Erro ao remover cliente');
         })
 }
+
+

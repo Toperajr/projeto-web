@@ -108,3 +108,5 @@ function removerProduto(material) {
             alert('Erro ao remover produto');
         })
 }
+
+
