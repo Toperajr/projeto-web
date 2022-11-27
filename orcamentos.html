@@ -82,14 +82,13 @@
                             <form id="frmCadastro">
 
                                 <div class="col-md-4 mb-4">
-                                    <label for="txtEmail"></label>
                                     <span>Obra</span>
-                                    <input class="form-control" type="text" id="txtEmail" required placeholder="Titulo da obra/Serviço" />
+                                    <input class="form-control" type="text" id="txtObra" required placeholder="Titulo da obra/Serviço" />
                                 </div>
 
                                 <div class="col-md-4 mb-4">
                                     <span>Data</span>
-                                    <input class="form-control" type="date" id="txtEmail" required />
+                                    <input class="form-control" type="date" id="txtData" required />
                                 </div>
 
                                 <div class="input-group mb-3">
@@ -98,7 +97,7 @@
                                             <i class="fa-solid fa-plus"></i></button>
                                     </div>
                                     <input id="caixaCli" style="max-width: 350px;" type="text" readonly="true"
-                                        class="form-control aria-label=" />
+                                        class="form-control aria-label="/>
                                 </div>
                                 <br>
                                 <div class="input-group mb-3">
@@ -106,7 +105,7 @@
                                         <label class="form-label">Mão da obra </label>
                                         <label style="padding-left: 100px; " class="form-label">Valor: &nbsp</label>
                                     </div>
-                                    <input style="max-width: 100px; height: 30px;" type="number"
+                                    <input id="valorObra" style="max-width: 100px; height: 30px;" type="number"
                                      class="form-control aria-label=" placeholder="R$"/>
                                 </div>
                                 <div class="form-outline w-50 mb-4">
@@ -136,9 +135,8 @@
 
                                 <br>
                                 <div class="col-md-4 mb-4">
-                                    <button class="btn btn-success" type="submit" value="Salvar"
-                                        id="btnSalvar">Salvar</button>
-                                    <input class="btn btn-danger" value="Limpar" type="reset" />
+                                    <button class="btn btn-success" type="button" id="btnSalvar" onclick="salvarOrcamento()">Salvar</button>
+                                    <button class="btn btn-danger" value="Limpar" type="reset">Limpar</button> 
                                 </div>
                             </form>
 
@@ -149,9 +147,9 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            <label id="lupita" style="padding-right: 650px;">Lista de orçamentos</label>
+                            <label id="lupita" style="padding-right: 63%;">Lista de Orçamentos</label>
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input style="max-width: 300px;" type="text" placeholder="Pesquisar...">
+                            <input id="searchbar" onkeyup="pesquisarOrca()" style="max-width: 300px;" type="text" placeholder="Pesquisar...">
                         </div>
 
 
@@ -161,14 +159,14 @@
                                     <table class="dataTable-table" id="tblListar">
                                         <thead>
                                             <tr>
-                                                <td>Obra</td>
-                                                <td>Data</td>
-                                                <td>Cliente</td>
-                                                <td style='max-width: 200px'>Opções</td>
+                                                <td style="background-color: #ced4da;">Obra</td>
+                                                <td style="background-color: #ced4da;">Data</td>
+                                                <td style="background-color: #ced4da;">Cliente</td>
+                                                <td style='background-color: #ced4da; max-width: 200px'>Opções</td>
 
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="tabelita">
                                             <tr>
                                                 <td>Construção de piscina</td>
                                                 <td>23/07/2022</td>
@@ -189,6 +187,18 @@
                                                     <i style="padding-right: 10px; font-size: 20px;" class="fa-regular fa-trash-can"></i>
                                                     <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-file-export"></i>
                                                 </td>
+                                                <tr>
+                                                    <td>Construção de piscina</td>
+                                                    <td>23/07/2022</td>
+                                                    <td>Jubirildo</td>
+                                                    <td style='max-width: 200px'>
+                                                        <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-pencil"></i>
+                                                        <i style="padding-right: 10px; font-size: 20px;" class="fa-regular fa-trash-can"></i>
+                                                        <i style="padding-right: 10px; font-size: 20px;" class="fa-solid fa-file-export"></i>
+                                                    </td>
+                                                        
+                                                </tr>
+                                                
                                                     
                                             </tr>
 
@@ -253,6 +263,8 @@
         crossorigin="anonymous"></script>
     <script src="js/orcamentos/orcamentoCLi.js"></script>
     <script src="js/orcamentos/orcamentoPro.js"></script>
+    <script src="js/orcamentos/crudorca.js"></script>
+    <script src="js/orcamentos/barraPesqui.js"></script>
     <script src="js/scripts.js"></script>
 
 </body>

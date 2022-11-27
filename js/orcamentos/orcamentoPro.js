@@ -87,21 +87,27 @@ function addProdutosTela(listaprod) {
         const diminu = document.createElement('i');
         diminu.className = "fa-solid fa-angles-left";
         diminu.setAttribute("style", "font-size: 20px;" );
+
         const btnDim = document.createElement('button');
         btnDim.appendChild(diminu);
         btnDim.type = "button"
+        btnDim.setAttribute("style", "border: 0px; background: transparent;" )
 
         const caixaQuant = document.createElement('input');
         caixaQuant.type = "number";
         caixaQuant.setAttribute("style", "width: 70px;" );
+        caixaQuant.min = "0";
 
         const aument = document.createElement('i');
         aument.className = "fa-solid fa-angles-right";
         aument.setAttribute("style", "font-size: 20px;" );
+        
 
         const btnAum = document.createElement('button');
         btnAum.appendChild(aument);
         btnAum.type = "button"
+        btnAum.setAttribute("style", "border: 0px; background: transparent;" )
+
         quant.append(btnDim, caixaQuant, btnAum);
         tr.appendChild(quant);
         var au = 0;

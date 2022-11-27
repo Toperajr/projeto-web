@@ -11199,7 +11199,7 @@ body {
   overflow-x: scroll;
   height: fit-content;
   max-height: 50.4vh;
-  width: 100%;
+  padding-right: 1%;
   margin-top: 22px;
   
   margin: 15px;

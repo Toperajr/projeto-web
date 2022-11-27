@@ -117,8 +117,9 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Lista de clientes
-
+                            <label id="lupita" style="padding-right: 63%;">Lista de Clientes</label>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input id="searchbarC" onkeyup="pesquisarCli()" style="max-width: 300px;" type="text" placeholder="Pesquisar...">
                         </div>
 
 
@@ -127,7 +128,7 @@
                             <div class="outer-wrapper">
                                 <div class="table-wrapper">
                                     <table class="dataTable-table" id="tblListar">
-                                        <thead>
+                                        <thead >
                                             <tr>
                                             <th>Nome</th>
                                             <th>Telefone</th>
@@ -174,6 +175,7 @@
     <script src="js/scripts.js"></script>
     <script src="js/clientes/clientes.js"></script>
     <script src="js/clientes/crudCli.js"></script>
+    <script src="js/orcamentos/barraPesqui.js"></script>
 </body>
 
 </html>

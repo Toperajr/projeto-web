@@ -54,11 +54,17 @@ function addDadosTela(material) {
 function salvarMaterial() {
     const material = criarMaterial();
 
-    if (eNovoMaterial()) {
-        salvar(material);
-    } else {
-        atualizar(material);
+    if(material.nome != "" && !isNaN(material.valor.preco) ){
+
+        if (eNovoMaterial()) {
+            salvar(material);
+        } else {
+            atualizar(material);
+        }
+    }else{
+        alert('O campo produto ou valor está nulo.')
     }
+    
 }
 
 
