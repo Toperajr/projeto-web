@@ -12,15 +12,17 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
+
 const form = {
     obra: () => document.getElementById('txtObra'),
     data: () => document.getElementById('txtData'),
     cliente: () => document.getElementById('caixaCli'),
     descri: () => document.getElementById('descricao'),
     descrivalor: () => document.getElementById('valorObra'),
-    btnSalvar: () => document.getElementById('btnSalvar')
+    btnSalvar: () => document.getElementById('btnSalvar'),
+    tabelinhaProd: () => document.getElementById('listaProd')
 }
-const materias = new Array(0);
+
 
 function salvarOrcamento() {
     const orcamento = criarOrcamento();
@@ -28,6 +30,7 @@ function salvarOrcamento() {
 }
 
 function criarOrcamento() {
+ 
     return {
         obra: form.obra().value,
         data: form.data().value,
@@ -35,6 +38,10 @@ function criarOrcamento() {
             descri: form.descri().value,
             descrivalor: parseFloat(form.descrivalor().value)
         },
+        produto: {
+
+
+        }
     
     };
 }

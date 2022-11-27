@@ -35,15 +35,25 @@ function adicionarProd(user) {
 }
 
 function addProdutosTela(listaprod) {
+    
+
     const orderedList = document.getElementById('listaProd');
 
     listaprod.forEach(listaprod => {
         const tr = document.createElement('tr');
         
         tr.id = listaprod.uid;
+
+        const idd = document.createElement('td')
+        idd.innerHTML = listaprod.uid
+        idd.setAttribute("style", "display: none")
+        tr.appendChild(idd)
+
         const nome = document.createElement('td');
         nome.innerHTML = listaprod.nome;
+
         tr.appendChild(nome);
+
         
         const unid = document.createElement('td');
         const selectUn = document.createElement('select');
@@ -130,4 +140,5 @@ function addProdutosTela(listaprod) {
  
         orderedList.appendChild(tr);
     });
+
 }
