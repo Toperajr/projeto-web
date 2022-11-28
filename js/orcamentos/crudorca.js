@@ -32,6 +32,13 @@ function salvarOrcamento() {
 
 }
 
+function paraObjeto(arr) {
+  var rv = {};
+  for (var i = 0; i < arr.length; ++i)
+    rv[i] = arr[i];
+  return rv;
+}
+
 function criarOrcamento() {
 
     return {
@@ -57,6 +64,34 @@ function criarOrcamento() {
 
 function salvar(orcamento) {
     showLoading();
+    var opcoes = document.getElementsByClassName('opcaoo');
+    var nomesProd = document.getElementsByClassName('produtin');
+    var qtnProdu = document.getElementsByClassName('quantity')
+    const nomeProd = new Array();
+    const quantiProd = new Array();
+    const opcao = new Array();
+
+    Array.from(opcoes).forEach(function(escala) {
+        opcao.push(escala.value)
+    });
+    Array.from(nomesProd).forEach(function(produtins) {
+        nomeProd.push(produtins.innerHTML)
+    });
+    Array.from(qtnProdu).forEach(function(quanti) {
+        quantiProd.push(quanti.value)
+    });
+    console.log(nomeProd);
+    console.log(quantiProd);
+    console.log(opcao);
+    const produtao = paraObjeto(nomeProd)
+    const qtn = paraObjeto(quantiProd)
+    const opicao = paraObjeto(opcao)
+    aaaa
+    produtao.qtd = qtn
+    produtao.medida = opicao
+    orcamento.produto = produtao;
+
+    console.log(orcamento);
     firebase.firestore()
         .collection('orcamentos')
         .add(orcamento)
@@ -74,7 +109,7 @@ function atualizar(orcamento) {
     firebase.firestore()
         .collection("orcamentos")
         .doc(getMaterialUid())
-        .update(material)
+        .update(orcamento)
         .then(() => {
             hideLoading();
             window.location.href = "produtos.html";

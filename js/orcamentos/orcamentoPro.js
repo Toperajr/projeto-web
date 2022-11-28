@@ -58,6 +58,7 @@ function addProdutosTela(listaprod) {
         
         const unid = document.createElement('td');
         const selectUn = document.createElement('select');
+        selectUn.className = "opcaoo"
         const blank = document.createElement('option');
         blank.hidden = true
         blank.selected = false
@@ -108,6 +109,7 @@ function addProdutosTela(listaprod) {
         caixaQuant.type = "number";
         caixaQuant.setAttribute("style", "width: 70px;" );
         caixaQuant.min = "0";
+        caixaQuant.className = "quantity"
 
         const aument = document.createElement('i');
         aument.className = "fa-solid fa-angles-right";
