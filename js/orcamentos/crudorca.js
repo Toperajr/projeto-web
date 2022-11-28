@@ -20,31 +20,40 @@ const form = {
     descri: () => document.getElementById('descricao'),
     descrivalor: () => document.getElementById('valorObra'),
     btnSalvar: () => document.getElementById('btnSalvar'),
-    tabelinhaProd: () => document.getElementById('listaProd')
+    tabelinhaProd: () => document.getElementById('listaProd'),
 }
 
 
 function salvarOrcamento() {
     const orcamento = criarOrcamento();
     salvar(orcamento);
+
+
+
 }
 
 function criarOrcamento() {
- 
+
     return {
         obra: form.obra().value,
         data: form.data().value,
+        cliente: form.cliente().value,
         descricao: {
             descri: form.descri().value,
             descrivalor: parseFloat(form.descrivalor().value)
         },
         produto: {
-
-
+            materiais: null,
+            qntmateriais: null
+        },
+        user: {
+            uid: firebase.auth().currentUser.uid
         }
+
     
     };
 }
+
 
 function salvar(orcamento) {
     showLoading();

@@ -54,6 +54,7 @@ function addDadosTela(material) {
 function salvarMaterial() {
     const material = criarMaterial();
 
+    
     if(material.nome != "" && !isNaN(material.valor.preco) ){
 
         if (eNovoMaterial()) {

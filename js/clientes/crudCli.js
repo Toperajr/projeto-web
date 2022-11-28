@@ -54,14 +54,20 @@ function addDadosTela1(cliente) {
 }
 
 function salvarcliente() {
-    console.log(form.descricao().value)
     const cliente = criarcliente();
 
-    if (eNovocliente()) {
-        salvar(cliente);
-    } else {
-        atualizar(cliente);
+    if(cliente.nome != ""){
+
+        if (eNovocliente()) {
+            salvar(cliente);
+        } else {
+            atualizar(cliente);
+        }
+
+    }else{
+        alert('O campo nome está nulo.')
     }
+
 }
 
 

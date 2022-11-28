@@ -7,7 +7,6 @@ function logout() {
 }
 firebase.auth().onAuthStateChanged(user => {
     if (user){
-        adicionarCli(user);
         console.log(user.uid)
     }
 })
@@ -41,7 +40,7 @@ function adicionarCli(user) {
 }
 
 function addClientesTela(listacli) {
-    const orderedList = document.getElementById('listacli');
+    const orderedList = document.getElementById('listaclo');
     const caixaCli = document.getElementById('caixaCli');
     listacli.forEach(listacli => {
         const tr = document.createElement('tr');
@@ -59,7 +58,7 @@ function addClientesTela(listacli) {
         tr.appendChild(nome);
         
         orderedList.appendChild(tr);
+        
 
     });
 }
-//Tabelinha

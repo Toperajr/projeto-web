@@ -51,6 +51,7 @@ function addProdutosTela(listaprod) {
 
         const nome = document.createElement('td');
         nome.innerHTML = listaprod.nome;
+        nome.className = "produtin"
 
         tr.appendChild(nome);
 
@@ -139,6 +140,7 @@ function addProdutosTela(listaprod) {
         })
  
         orderedList.appendChild(tr);
+
     });
 
 }
