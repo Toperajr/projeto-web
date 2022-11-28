@@ -28,9 +28,13 @@ function salvarOrcamento() {
     const orcamento = criarOrcamento();
 
     if(orcamento.cliente != ""){
-        salvar(orcamento);
+        if(orcamento.obra != ""){
+            salvar(orcamento);
+        }
+        else{
+            alert("está faltando o nome da obra")
+        }
         
-
     }else{
         alert('O campo cliente está nulo.')
     }

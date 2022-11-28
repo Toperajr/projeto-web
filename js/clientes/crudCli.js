@@ -57,12 +57,16 @@ function salvarcliente() {
     const cliente = criarcliente();
 
     if(cliente.nome != ""){
-
-        if (eNovocliente()) {
-            salvar(cliente);
-        } else {
-            atualizar(cliente);
+        if(cliente.descricao != ""){
+            if (eNovocliente()) {
+                salvar(cliente);
+            } else {
+                atualizar(cliente);
+            }
+        }else{
+            alert('Insira algo na descrição, nem que seja um espaço!')
         }
+
 
     }else{
         alert('O campo nome está nulo.')
