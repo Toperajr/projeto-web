@@ -26,7 +26,14 @@ const form = {
 
 function salvarOrcamento() {
     const orcamento = criarOrcamento();
-    salvar(orcamento);
+
+    if(orcamento.cliente != ""){
+        salvar(orcamento);
+        
+
+    }else{
+        alert('O campo cliente está nulo.')
+    }
 
 
 
